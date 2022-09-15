@@ -1,0 +1,5 @@
+package com.capgemini.creditcardsystem.model;
+
+public class Customer {
+
+}

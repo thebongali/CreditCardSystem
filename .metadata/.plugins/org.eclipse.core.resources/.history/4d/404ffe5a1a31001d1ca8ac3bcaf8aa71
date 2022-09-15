@@ -1,0 +1,18 @@
+package com.capgemini.creditcardsystem.service;
+
+import java.util.List;
+
+import com.capgemini.creditcardsystem.dto.CreditCardDto;
+import com.capgemini.creditcardsystem.model.CreditCard;
+
+public interface CreditCardService {
+
+	CreditCard getCreditCardById(int creditcardId);
+
+	void saveCreditCard(CreditCard creditcard);
+
+	void deleteCreditCardId(int creditcardid);
+
+	List<CreditCardDto> getAllCreditCards();
+
+}

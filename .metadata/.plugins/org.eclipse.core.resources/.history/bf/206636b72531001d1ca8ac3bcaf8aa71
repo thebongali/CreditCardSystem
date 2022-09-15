@@ -1,0 +1,57 @@
+package com.capgemini.creditcardsystem.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.capgemini.creditcardsystem.dto.CreditCardDto;
+import com.capgemini.creditcardsystem.model.CreditCard;
+import com.capgemini.creditcardsystem.service.CreditCardService;
+
+@RestController
+@RequestMapping("/creditcardapi")
+public class CreditCardController {
+
+	@Autowired
+	private CreditCardService creditCardService;
+	
+	@PostMapping("/creditCards")
+	public ResponseEntity<CreditCardDto> addCreditCard(@RequestBody CreditCard creditcard) {
+		return new ResponseEntity<CreditCardDto>(creditCardService.saveCreditCard(creditcard), HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/creditCards/{creditCardId}")
+	public CreditCard getCreditCardById(@PathVariable int creditCardId) {
+		return creditCardService.getCreditCardById(creditCardId);
+	}
+	
+	@GetMapping("/creditCards/{creditCardType}")
+	public CreditCardDto getCreditCardByType(@PathVariable String creditCardType) {
+		return creditCardService.getCreditCardByType(creditCardType);
+	}
+	
+	
+	@GetMapping("/creditCards")
+	public ResponseEntity<List<CreditCardDto>> getAllCreditCards(){
+		return new ResponseEntity<List<CreditCardDto>>(creditCardService.getAllCreditCards(),HttpStatus.FOUND);
+	}
+	
+	@DeleteMapping("/creditCards/{creditcardid}")
+	public ResponseEntity<String> deleteCreditCard(@PathVariable int creditcardid) {
+		creditCardService.deleteCreditCardId(creditcardid);
+		return new ResponseEntity<String>("creditcard deleted successfully: "+creditcardid, HttpStatus.OK);
+	}
+	
+	
+	
+
+}

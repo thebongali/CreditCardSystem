@@ -1,0 +1,31 @@
+package com.capgemini.creditcardsystem.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.capgemini.creditcardsystem.dto.TransactionDto;
+import com.capgemini.creditcardsystem.service.TransactionService;
+
+@RestController
+@RequestMapping("/transactionapi")
+public class TransactionController {
+
+	@Autowired
+	TransactionService service;
+
+	public ResponseEntity<TransactionDto> addTransaction(@PathVariable int custId, @PathVariable int creditCardId,
+			@RequestBody TransactionDto transaction) {
+
+		TransactionDto dto = service.addTransaction(custId, creditCardId, transaction);
+		return new ResponseEntity<TransactionDto>(dto, HttpStatus.CREATED);
+
+	}
+
+}

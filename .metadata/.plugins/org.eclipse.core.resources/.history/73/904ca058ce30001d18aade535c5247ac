@@ -1,0 +1,37 @@
+package com.capgemini.creditcardsystem.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.capgemini.creditcardsystem.dto.CustomerDto;
+import com.capgemini.creditcardsystem.service.CustomerService;
+
+@Service
+public class CustomerServiceImpl implements CustomerService{
+
+	@Override
+	public List<CustomerDto> getAllCustomers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CustomerDto getCustomerById(int customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CustomerDto addCustomer(CustomerDto dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteCustomer(int customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

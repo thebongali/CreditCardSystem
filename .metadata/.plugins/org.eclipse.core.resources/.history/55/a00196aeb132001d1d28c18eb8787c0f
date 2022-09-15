@@ -1,0 +1,41 @@
+package com.capgemini.creditcardsystem.service.impl;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.creditcardsystem.dto.CardHolderDto;
+import com.capgemini.creditcardsystem.exception.CardHolderNotFoundException;
+import com.capgemini.creditcardsystem.model.CardHolder;
+import com.capgemini.creditcardsystem.repository.CardHolderRepository;
+import com.capgemini.creditcardsystem.repository.CustomerRepository;
+import com.capgemini.creditcardsystem.service.CardHolderService;
+
+@Service
+public class CardHolderServiceImpl implements CardHolderService{
+	
+	@Autowired
+	CardHolderRepository cardHolderRepo;
+	
+	CustomerRepository customerRepo;
+	
+	@Autowired
+	ModelMapper mapper;
+
+	@Override
+	public CardHolderDto allotCreditCard(int customerId,  CardHolderDto cardHolder) {
+		
+		CardHolder
+		
+		return null;
+	}
+
+	@Override
+	public CardHolderDto getCreditCardByCardNo(int cardNumber) {
+		
+		CardHolder cardHolder = cardHolderRepo.findById(cardNumber).orElseThrow(() -> new CardHolderNotFoundException());
+		return mapper.map(cardHolder, CardHolderDto.class);
+	}
+
+
+}

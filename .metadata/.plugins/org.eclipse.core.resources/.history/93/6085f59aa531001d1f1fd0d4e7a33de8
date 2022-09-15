@@ -1,0 +1,9 @@
+package com.capgemini.creditcardsystem.service;
+
+import com.capgemini.creditcardsystem.dto.TransactionDto;
+
+public interface TransactionService {
+
+	TransactionDto addTransaction(int custId, int cardNumber, TransactionDto transaction);
+
+}

@@ -1,0 +1,5 @@
+package com.capgemini.creditcardsystem.dto;
+
+public class TransactionDto {
+
+}

@@ -1,0 +1,19 @@
+package com.capgemini.creditcardsystem.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class AuthenticationBean {
+
+	private String message;
+
+	@Override
+	public String toString() {
+		return "AuthenticationBean [message=" + message + "]";
+	}
+	
+	
+	
+	
+}

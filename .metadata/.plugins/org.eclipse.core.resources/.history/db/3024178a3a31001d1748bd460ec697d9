@@ -1,0 +1,20 @@
+package com.capgemini.creditcardsystem.dto;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CreditCardDto {
+
+	private int creditCardId;
+	private String type;
+	private double joiningFees;
+	private double annualFees;
+	private double cardLimit;
+	private String bankName;
+}

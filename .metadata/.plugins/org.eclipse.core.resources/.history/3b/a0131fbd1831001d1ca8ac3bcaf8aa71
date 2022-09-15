@@ -1,0 +1,13 @@
+package com.capgemini.creditcardsystem.service;
+
+import com.capgemini.creditcardsystem.model.CreditCard;
+
+public interface CreditCardService {
+
+	CreditCard getCreditCardById(int creditcardId);
+
+	void saveCreditCard(CreditCard creditcard);
+
+	void deleteCreditCardId(int creditcardid);
+
+}

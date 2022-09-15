@@ -1,0 +1,24 @@
+package com.capgemini.creditcardsystem.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.capgemini.creditcardsystem.dto.CardHolderDto;
+import com.capgemini.creditcardsystem.service.CardHolderService;
+
+@Service
+public class CardHolderServiceImpl implements CardHolderService{
+
+	@Override
+	public CardHolderDto allotCreditCard(int customerId,  CardHolderDto cardHolder) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CardHolderDto getCreditCardByCardNo(int cardNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

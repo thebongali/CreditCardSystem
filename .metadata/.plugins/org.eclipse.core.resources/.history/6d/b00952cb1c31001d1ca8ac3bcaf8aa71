@@ -1,0 +1,61 @@
+package com.capgemini.creditcardsystem.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.creditcardsystem.dao.CreditCardDao;
+import com.capgemini.creditcardsystem.dto.CreditCardDto;
+import com.capgemini.creditcardsystem.model.CreditCard;
+import com.capgemini.creditcardsystem.repository.CreditCardRepository;
+import com.capgemini.creditcardsystem.service.CreditCardService;
+
+@Service
+public class CreditCardServiceImpl implements CreditCardService{
+	
+	@Autowired
+	CreditCardRepository creditCardRepo;
+	
+	@Autowired
+	CreditCardDao dao;
+	
+	@Autowired
+	ModelMapper mapper;
+
+	@Override
+	public CreditCard getCreditCardById(int creditcardId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CreditCardDto saveCreditCard(CreditCard creditcard) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteCreditCardId(int creditcardid) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<CreditCardDto> getAllCreditCards() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CreditCard getCreditCardByType(String creditCardType) {
+		Optional<CreditCard> opt = creditCardRepo.findCreditCardByType(creditCardType);
+		if(!opt.isPresent()) {
+			throw new CreditCardNotFoundException();
+		}
+		return mapper.map(opt.get(), CreditCardDao.class);
+	}
+
+}

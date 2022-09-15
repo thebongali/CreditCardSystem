@@ -1,0 +1,5 @@
+package com.capgemini.creditcardsystem.service;
+
+public interface CreditCardService {
+
+}

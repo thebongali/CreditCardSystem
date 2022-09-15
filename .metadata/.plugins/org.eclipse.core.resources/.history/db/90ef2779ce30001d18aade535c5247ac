@@ -1,0 +1,5 @@
+package com.capgemini.creditcardsystem.repository;
+
+public interface CustomerRepository {
+
+}

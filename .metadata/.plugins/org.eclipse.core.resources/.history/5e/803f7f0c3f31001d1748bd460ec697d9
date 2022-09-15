@@ -1,0 +1,58 @@
+package com.capgemini.creditcardsystem.service.impl;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.creditcardsystem.dao.CreditCardDao;
+import com.capgemini.creditcardsystem.dto.CreditCardDto;
+import com.capgemini.creditcardsystem.model.CreditCard;
+import com.capgemini.creditcardsystem.repository.CreditCardRepository;
+import com.capgemini.creditcardsystem.service.CreditCardService;
+
+@Service
+public class CreditCardServiceImpl implements CreditCardService{
+
+	@Autowired
+	CreditCardRepository repo;
+	
+	@Autowired
+	ModelMapper mapper;
+	
+	CreditCardDao dao;
+	
+	@Override
+	public CreditCardDto getCreditCardById(int creditcardId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CreditCardDto saveCreditCard(CreditCardDto dto) {
+		CreditCard card = mapper.map(dto, CreditCard.class);
+		card = dao.createCreditCard(card);
+		return mapper.map(card, CreditCardDto.class);
+	}
+
+	@Override
+	public String deleteCreditCardId(int creditcardid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CreditCardDto> getAllCreditCards() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CreditCardDto getCreditCardByType(String creditCardType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}
